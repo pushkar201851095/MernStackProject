@@ -5,27 +5,25 @@ const app = express();
 
 dotenv.config({path: './config.env'});
 
-require('./db/conn');
+require('./db/conn');  // connection script 
 const user = require('./model/userSchema');  // imported the schema
 
 app.use(express.json());  // if any data comes in the form of json then convert that data into object
 
 // we link the routerr files to make our route easy
-app.use(require('./router/auth'));
+app.use(require('./router/auth'));       // here router auth files are written this means that all the routes written in routs.js files will run first then after that routes written below will run 
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT   //extracting port value from config_file .env
 
 
 // middleware 
 const middlware = (req, res, next)=>{
     console.log("hellow middleware");
+    // res.send("middleware is talking!");
     next();
 }
 
 
-// app.get('/', (req, res)=>{
-//     res.send("hello world from the server");
-// })
 
 app.get('/about',middlware, (req, res)=>{
     res.send("about me from server")
@@ -36,15 +34,6 @@ app.get('/contact', (req, res)=>{
     res.send("contact me from server")
 });
 
-
-// app.get('/signin', (req, res)=>{
-//     res.send("signin me from server")
-// });
-
-
-app.get('/signup', (req, res)=>{
-    res.send("signup me from server")
-});
 
 // console.log("subscribe"); 
 app.listen(PORT, ()=>{

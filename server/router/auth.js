@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const router = express.Router();
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 
 //connection to database is requied now to save the post data into the db
 require("../db/conn");
@@ -37,7 +37,7 @@ router.get("/", (req, res) => {
 // using async await method
 
 router.post("/register", async (req, res) => {
-  const { name, email, phone, work, password, cpassword } = req.body;
+  const { name, email, phone, work, password, cpassword } = req.body; // destructuring of elements.
 
   if (!name || !email || !phone || !work || !password || !cpassword) {
     return res.status(422).json({ eroor: "plz filled the field properly" });
@@ -64,7 +64,7 @@ router.post("/register", async (req, res) => {
 
 router.post("/signin", async (req, res) => {
   // console.log(req.body);
-
+  let token;
   try {
     const { email, password } = req.body;
     if (!email || !password) {
