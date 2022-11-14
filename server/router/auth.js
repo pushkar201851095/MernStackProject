@@ -74,17 +74,24 @@ router.post("/signin", async (req, res) => {
     const userLogin = await User.findOne({ email: email }); // "User" already imported on the top
     if (userLogin) {
       const isMatch = await bcrypt.compare(password, userLogin.password);
-      console.log(userLogin);
+      console.log("user is logging in .... ");
+      // console.log(userLogin);
 
       const token = await userLogin.generateAuthToken();
+      console.log("token is : ", token); 
 
+      res.cookie("jw-token", token,{         
+        expires: new Date(Date.now()+ 25892000),
+        httpOnly:true  
+      });
+ 
       if (!isMatch) {
         res.status(400).json({ error: "user error password" });
       } else {
-
-        res.json({ message: "user sigin successfuly.." });
+      
+        res.json({ message: "user sigin successfuly.." });  
       }
-    }
+    } 
     else{
         res.json({error: "User does not exits."});
     }

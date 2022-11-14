@@ -26,6 +26,7 @@ const middlware = (req, res, next)=>{
 
 
 app.get('/about',middlware, (req, res)=>{
+    res.cookie("test", "push ")
     res.send("about me from server")
 });
 

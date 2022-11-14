@@ -57,9 +57,9 @@ userSchema.methods.generateAuthToken = async function(){    // annonymus functio
         // in above line of code by using this._id we are accessing the id of users those login details we are filling in to login 
         this.tokens = this.tokens.concat({token:tokenPush});
         await this.save();
-        return token;
+        return tokenPush;      
     }catch(err){    
-        console.log(err);
+        console.log("hello catch block12 ",err);
     }
 }
 
