@@ -1,11 +1,10 @@
 import React from 'react'
 
-export const Signin = () => {
+export const Signup = () => {
   return (
-    <div>Signin
+    <div>Signup
 
 <p>we are the mern developer!!</p>    
-
 
     </div>
   )
