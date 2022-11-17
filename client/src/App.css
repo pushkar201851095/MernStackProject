@@ -1,0 +1,26 @@
+.SignUp {
+  /* text-align: center; */
+  margin-left: 40%;
+  margin-top: 5%;
+
+}
+
+.SignIn{
+  /* text-align: center; */
+  margin-left: 40%;
+  margin-top: 10%;
+
+}
+.SignUp_form{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+}
+.SignUp_form_input{
+  display: flex;
+  flex-direction: row;
+}
+.SignUp_form_input strong{
+  width: 400px;
+}
