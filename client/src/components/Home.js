@@ -2,9 +2,14 @@ import React from 'react'
 
 export const Home = () => {
   return (
-    <div>
-        <h1>Welcome</h1>
-        <p>we are the mern developer!!</p>    
+    <div className='home'>
+        <div className='home1'>
+          <h2>Welcome</h2>
+        </div>
+        <div className='home2'>
+          <h2>Home</h2>
+        </div>
+        
     </div>
   )
 }

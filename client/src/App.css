@@ -4,6 +4,26 @@
   margin-top: 5%;
 
 }
+.home{
+  display: flex;
+  flex-direction: row;
+}
+
+.home1{
+  background-color: rgb(197, 206, 206);
+  width: 50%;
+  height: 600px;
+  text-align: center;
+}
+.home2{
+  background-color: rgb(224, 241, 243);
+  width: 50%;
+  height: 600px;
+  text-align: center;
+  
+
+}
+
 
 .SignIn{
   /* text-align: center; */
@@ -24,3 +44,44 @@
 .SignUp_form_input strong{
   width: 400px;
 }
+
+.Contact_display_{
+  margin-left: 20%;
+  display: flex;
+  flex-direction: row;
+}
+.Contact_display_item{
+  margin-right: 30px;
+  width: 300px;
+  border: 2px solid rgb(77, 186, 206);
+  border-radius: 6px;
+}
+.Contact_{
+  margin-left: 38%;
+  margin-top: 5%;
+}
+
+
+.Contact_input{
+  margin-right: 50%;
+}
+.Contact_input_1{
+  /* width: 300px; */
+  background-color: cadetblue;
+  margin: 5px 10px 20px 12px;
+}
+.Contact_input_text_area{
+  display: flex;
+  flex-direction: row;
+  flex-flow: column;
+  background-color: rgb(87, 110, 102);
+}
+.Contact_Button{
+  height: 30px;
+}
+
+.notfound{
+  text-align: center;
+  margin-top: 10%;
+}
+

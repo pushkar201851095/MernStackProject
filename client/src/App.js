@@ -6,6 +6,7 @@ import { Contact } from './components/Contact';
 import { Signin } from './components/Signin';
 import { Signup } from './components/Signup';
 import { Home } from './components/Home';
+import { ErrorPage } from './components/ErrorPage';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
         <Route path='/contact' element={<Contact/>} />
         <Route path='/signup' element={<Signup/>} />
         <Route path='/signin' element={<Signin/>} />
+        <Route path="/*" element={<ErrorPage/>} />
         
 
       </Routes>
