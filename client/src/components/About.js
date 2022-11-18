@@ -74,8 +74,8 @@ export const About = () => {
             </div>
           </div>
           <div className="">
-          <div className="col-md-8 pl-5  about-info">
-            <div className="tab-content profile-tab" id="myTabContent">
+          <div className="col-md-8 pl-5  about-info ">
+            <div className="tab-content profile-tab " id="myTabContent">
               <div
                 className="tab-pane fade show active"
                 id="home"
