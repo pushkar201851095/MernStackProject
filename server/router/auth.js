@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const router = express.Router();
+const authenticate = require('../middleware/Authenticate');
 // const jwt = require("jsonwebtoken");
 
 //connection to database is requied now to save the post data into the db
@@ -11,7 +12,7 @@ router.get("/", (req, res) => {
   res.send("hello router js");
 });
 
-//  using promises
+// using promises
 // router.post('/register', (req, res)=>{
 
 //     const {name, email, phone, work, password, cpassword} = req.body;
@@ -99,5 +100,13 @@ router.post("/signin", async (req, res) => {
     console.log(err);
   }
 });
+
+
+router.get('/about',authenticate, (req, res)=>{
+  // console.log('hellow account');
+  console.log('Cookies: ', req.cookies)
+  res.send(req.rootUser);
+});
+
 
 module.exports = router;

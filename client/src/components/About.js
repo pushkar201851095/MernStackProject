@@ -1,9 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const About = () => {
+
+  const navigate = useNavigate(); 
+
+  const callAboutPage= async ()=>{
+    try{
+      console.log("F try 1");
+      const res  = await fetch('/about',{
+        method:"GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        credentials:"include",
+      });
+      console.log("F try 2");
+      const data = await res.json();
+      console.log("F try 3");
+
+      console.log("data:  --> ",data);
+
+      if(!res.status===200){
+        const error =  new Error(res.error);
+        navigate('/signin')
+        throw error;
+      }
+
+    }catch(err){
+      console.log("-->><<---")
+      console.log("error::::>",err);
+      navigate('/signin')
+    }
+  }
+  useEffect(()=>{
+    callAboutPage();
+
+  },[])
+
   return (
     <div className="container emp-profile">
-      <form methon="">
+      <form methon="GET">
         <div className="row">
           <div className="col-md-6">
        

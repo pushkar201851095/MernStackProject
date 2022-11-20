@@ -1,7 +1,9 @@
 const dotenv = require("dotenv");
 const mongoose = require('mongoose');
 const express = require('express');
+const cookieParser = require('cookie-parser')
 const app = express();
+app.use(cookieParser())
 
 dotenv.config({path: './config.env'});
 
@@ -14,22 +16,6 @@ app.use(express.json());  // if any data comes in the form of json then convert 
 app.use(require('./router/auth'));       // here router auth files are written this means that all the routes written in routs.js files will run first then after that routes written below will run 
 
 const PORT = process.env.PORT   //extracting port value from config_file .env
-
-
-// middleware 
-const middlware = (req, res, next)=>{
-    console.log("hellow middleware");
-    // res.send("middleware is talking!");
-    next();
-}
-
-
-
-app.get('/about',middlware, (req, res)=>{
-    res.cookie("test", "push ")
-    res.send("about me from server")
-});
-
 
 app.get('/contact', (req, res)=>{
     res.send("contact me from server")
