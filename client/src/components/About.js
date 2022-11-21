@@ -16,12 +16,9 @@ export const About = () => {
         },
         credentials:"include",
       });
-      console.log("F try 2");
       const data = await res.json();
-      console.log("F try 3");
-
-      console.log("data:  --> ",data);
-
+      
+      
       if(!res.status===200){
         const error =  new Error(res.error);
         navigate('/signin')
@@ -29,7 +26,6 @@ export const About = () => {
       }
 
     }catch(err){
-      console.log("-->><<---")
       console.log("error::::>",err);
       navigate('/signin')
     }
